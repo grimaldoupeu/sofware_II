@@ -29,18 +29,35 @@ class MunicipalidadController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-        ]);
+{
+    $request->validate([
+        'nombre' => 'required|string|max:255',
+        'titulo' => 'nullable|string|max:255',
+        'descripcion' => 'nullable|string',
+        'redes_url' => 'nullable|url',
+        'red_facebook' => 'nullable|url',
+        'red_twitter' => 'nullable|url',
+        'red_whatsapp' => 'nullable|url',
+        'coordenadas_x' => 'nullable|string|max:255',
+        'coordenadas_y' => 'nullable|string|max:255',
+    ]);
 
-        Municipalidad::create([
-            'nombre' => $request->nombre,
-        ]);
+    Municipalidad::create([
+        'nombre' => $request->nombre,
+        'titulo' => $request->titulo,
+        'descripcion' => $request->descripcion,
+        'redes_url' => $request->redes_url,
+        'red_facebook' => $request->red_facebook,
+        'red_twitter' => $request->red_twitter,
+        'red_whatsapp' => $request->red_whatsapp,
+        'coordenadas_x' => $request->coordenadas_x,
+        'coordenadas_y' => $request->coordenadas_y,
+    ]);
 
-        return redirect()->route('municipalidades.index')
-            ->with('success', 'Municipalidad creada exitosamente');
-    }
+    return redirect()->route('municipalidades.index')
+        ->with('success', 'Municipalidad creada exitosamente');
+}
+
 
     /**
      * Display the specified resource.

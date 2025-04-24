@@ -27,6 +27,10 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Redes Sociales</th>
+                        <th>Coordenadas</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -35,6 +39,18 @@
                         <tr>
                             <td>{{ $municipalidad->id }}</td>
                             <td>{{ $municipalidad->nombre }}</td>
+                            <td>{{ $municipalidad->titulo }}</td>
+                            <td>{{ $municipalidad->descripcion }}</td>
+                            <td>
+                                <a href="{{ $municipalidad->red_facebook }}" target="_blank" class="btn btn-sm btn-primary">Facebook</a>
+                                <a href="{{ $municipalidad->red_twitter }}" target="_blank" class="btn btn-sm btn-info">Twitter</a>
+                                <a href="{{ $municipalidad->red_whatsapp }}" target="_blank" class="btn btn-sm btn-success">WhatsApp</a>
+                                <a href="{{ $municipalidad->redes_url }}" target="_blank" class="btn btn-sm btn-secondary">Más info</a>
+                            </td>
+                            <td>
+                                <p><strong>X:</strong> {{ $municipalidad->coordenadas_x }}</p>
+                                <p><strong>Y:</strong> {{ $municipalidad->coordenadas_y }}</p>
+                            </td>
                             <td>
                                 <a href="{{ route('municipalidades.edit', $municipalidad->id) }}" class="btn btn-sm btn-warning">Editar</a>
                                 <form action="{{ route('municipalidades.destroy', $municipalidad->id) }}" method="POST" style="display:inline;">

@@ -26,10 +26,52 @@
                 <label for="nombre" class="form-label">Nombre de la Municipalidad:</label>
                 <input type="text" name="nombre" id="nombre" class="form-control" value="{{ old('nombre') }}" required>
             </div>
+
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título:</label>
+                <input type="text" name="titulo" id="titulo" class="form-control" value="{{ old('titulo') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción:</label>
+                <textarea name="descripcion" id="descripcion" class="form-control">{{ old('descripcion') }}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="redes_url" class="form-label">URL de más información:</label>
+                <input type="url" name="redes_url" id="redes_url" class="form-control" value="{{ old('redes_url') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="red_facebook" class="form-label">Red Facebook:</label>
+                <input type="url" name="red_facebook" id="red_facebook" class="form-control" value="{{ old('red_facebook') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="red_twitter" class="form-label">Red Twitter:</label>
+                <input type="url" name="red_twitter" id="red_twitter" class="form-control" value="{{ old('red_twitter') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="red_whatsapp" class="form-label">Red WhatsApp:</label>
+                <input type="url" name="red_whatsapp" id="red_whatsapp" class="form-control" value="{{ old('red_whatsapp') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="coordenadas_x" class="form-label">Coordenada X:</label>
+                <input type="text" name="coordenadas_x" id="coordenadas_x" class="form-control" value="{{ old('coordenadas_x') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="coordenadas_y" class="form-label">Coordenada Y:</label>
+                <input type="text" name="coordenadas_y" id="coordenadas_y" class="form-control" value="{{ old('coordenadas_y') }}">
+            </div>
+
             <button type="submit" class="btn btn-primary">Crear</button>
             <a href="{{ route('municipalidades.index') }}" class="btn btn-secondary">Volver al listado de municipalidades</a>
         </form>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

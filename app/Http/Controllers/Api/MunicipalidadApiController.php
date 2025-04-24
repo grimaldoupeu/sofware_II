@@ -22,7 +22,7 @@ class MunicipalidadApiController extends Controller
 
         $municipalidad = Municipalidad::create($request->all());
 
-        return response()->json($municipalidad, 201);
+        return response()->json(Municipalidad::all(), 200);
     }
 
     public function show(Municipalidad $municipalidad)
