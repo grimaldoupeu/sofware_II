@@ -53,10 +53,12 @@ class MunicipalidadController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Municipalidad $municipalidad)
+    public function edit($id)
     {
+        $municipalidad = Municipalidad::findOrFail($id);
         return view('municipalidades.edit', compact('municipalidad'));
     }
+    
 
     /**
      * Update the specified resource in storage.
